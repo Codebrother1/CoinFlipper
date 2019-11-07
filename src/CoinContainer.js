@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Coin from "./Coin";
 import { choice } from "./helpers";
 
 class CoinContainer extends Component {
@@ -37,6 +38,7 @@ class CoinContainer extends Component {
     return (
       <div className="CoinContainer">
         <h2>Let's flip a coin!</h2>
+        {this.state.currCoin && <Coin info={this.state.currCoin} />}
         <button onClick={this.handleClick}>Flip Me!</button>
         <p>
           Out of {this.state.nFlips} flips, there has been {this.state.nHeads}{" "}
